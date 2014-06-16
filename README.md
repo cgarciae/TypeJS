@@ -88,6 +88,7 @@ tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 2. Add type() method to Function.prototype you can access a functions type (relatively easy)
 3. Support type definition for functions that take functions such as `(a -> b) -> a -> b` (the previous point helps but remains not easy)
 
-
+## Warning
+Typing a function has the extra cost of checking the type of all the arguments and output, don't use this in performance critical applications.
 
 
