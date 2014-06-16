@@ -7,32 +7,22 @@ TArray = function TArray(a){
     return '['+ a +']';
 };
 
-var natives = {
-    '[object Array]': 'array'
-    , '[object RegExp]': 'regexp'
-    , '[object Function]': 'function'
-    , '[object Arguments]': 'arguments'
-    , '[object Date]': 'date'
-};
-
-function getNativeType(obj) {
-    var str = Object.prototype.toString.call(obj);
-    if (natives[str]) return natives[str];
-    if (obj === null) return 'null';
-    if (obj === undefined) return 'undefined';
-    if (obj === Object(obj)) return 'object';
-    return typeof obj;
-}
-
 getType = function getType (a) {
-    switch( getNativeType (a) ) {
-        case 'array':
-            return TArray (a[0] ? getType (a[0]) : '');
+    switch (typeof  a) {
         case 'number':
             return (a % 1 === 0) ? 'Int' : 'Num';
         case 'string':
             return 'String';
     }
+    switch (Object.prototype.toString.call (a)) {
+        case '[object Array]':
+            return TArray (a[0] ? getType (a[0]) : '');
+    }
+    if (a === undefined) return 'Undefined';
+    if (a === Object (a)) return 'Obj';
+    if (a === null) return 'Null';
+
+    return 'Unknown';
 };
 
 parseSignature = function parseSignature (s) {
