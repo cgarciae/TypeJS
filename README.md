@@ -59,6 +59,11 @@ var tellSum = Type ('a -> a -> a', function (num1, num2) {
 tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 ```
 
+## setType
+You can create a new typed function for any existing untyped function with the setType() method added to Function.prototype
+```js
+g = f.setType ('a -> a -> a');
+```
 ## Currently Supported Types
 
 <table style="width:300px">
