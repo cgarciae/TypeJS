@@ -11,7 +11,7 @@ var Add = Type ('Num -> Num -> Int', function (a, b) {
 });
 ```
 
-Now lets do some tests. `Add` takes two `Num`s and returns an `Int`, since `Num` is any number in general but `Int` is more strict, this `Add` function will only be work if the two numbers given sum to a whole number.
+`Add` takes two `Num`s and returns an `Int`, since `Num` is any number in general but `Int` is more strict, this `Add` function will only be work if the two numbers given sum to a whole number.
 
 ```js
 Add(1, 2) //3
