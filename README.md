@@ -50,8 +50,8 @@ sumReduce ([1,2,3]) //TypeError: Incorrect input type, expected [String], receiv
 ```
 Any number of list nests like `[[[a]]]` will work. However, the type definition for the list will be based on its first element, type consistency withing the list will never be supported. For example, `[1,'2']` is of type `[Int]` while `['2',1]` is of type `[String]`.
 
-
-If the function is incorrectly typed, it wont work even in the first use.
+## Coherence
+If a function is incorrectly typed it won't work, even in the first use.
 ```js
 var tellSum = Type ('a -> a -> a', function (num1, num2) {
 	return "The sum is " + (num1 + num2);
