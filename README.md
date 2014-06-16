@@ -85,7 +85,7 @@ tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 
 ## Missing
 1. Add the rest of JavaScript types (easy)
-2. Add type() method to Function.prototype so functions can access a functions type (relatively easy)
+2. Add type() method to Function.prototype you can access a functions type (relatively easy)
 3. Support type definition for functions that take functions such as `(a -> b) -> a -> b` (the previous point helps but remains not easy)
 
 
