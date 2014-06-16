@@ -33,6 +33,8 @@ Add (1, '2') //"12"
 Add (1, 2) //TypeError: Incorrect input type, expected String, received Int
 ```
 
+`Int`s will always be infered as `Num`s because in JS there is no way to diferentiate 3.00000 from 3. 
+
 ## Lists
 List types are compound types and are defined as in Haskell like `[a]`. Variable types within lists are infered as you would expect.
 
