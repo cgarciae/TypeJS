@@ -54,7 +54,7 @@ Any number of list nests like `[[[a]]]` will work. However, the type definition 
 If the function is incorrectly typed, it wont work even in the first use.
 ```js
 var tellSum = Type ('a -> a -> a', function (num1, num2) {
-	return "The number is " + (num1 + num2);
+	return "The sum is " + (num1 + num2);
 });
 tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 ```
