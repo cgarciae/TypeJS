@@ -52,6 +52,17 @@ maybeReplaceTypeVariable = function maybeReplaceTypeVariable (a, name, value) {
     return getTypeVariable(a) === name ? a.replace (name, value). replace ('Int', 'Num') : a;
 };
 
+function getNArg (n) {
+    var i,
+        args = '';
+    for (i = 0; i < n; i++) {
+        args += 'a' + i;
+        if (i + 1 < n)
+            args += ',';
+    }
+    return args;
+}
+
 typesAreEqual = function typesAreEqual (functionSignature, typeNeeded, typeGiven) {
     var variableTypeName, variableTypeValue, i, t;
 
@@ -95,12 +106,7 @@ Type = function Type (signature, f) {
         return out;
     }
 
-    for (i = 0; i < f.length; i++) {
-        args += 'a' + i;
-        if (i+1 < f.length)
-            args += ',';
-    }
-    eval( 'function typedFun (' + args + '){ return _typedFun.apply(this,arguments) }' );
+    eval( 'function typedFun (' + getNArg(f.length) + '){ return _typedFun.apply(this,arguments) }' );
 
     return typedFun;
 };
@@ -109,3 +115,4 @@ Type = function Type (signature, f) {
 Function.prototype.setType = function (signature) {
     return Type (signature, this);
 };
+
