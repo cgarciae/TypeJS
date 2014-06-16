@@ -21,7 +21,7 @@ Add(2, '3') //TypeError: Incorrect input type, expected Num, received String
 ```
 
 ## Type Variables
-Lets modify `Add`s type signature a little and add a variable type `a`. Variable types have to be A SINGLE LOWERCASE LETTER!!!
+Lets modify `Add`s type signature a little and add a variable type `a`. Type variables have to be A SINGLE LOWERCASE LETTER!!!
 ```js
 var Add = Type ('Num -> a -> a', function (a, b) {
 	return a + b;
