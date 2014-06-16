@@ -1,12 +1,5 @@
 var reg = /^(\[*)(Str|Int|Num|[a-z])(\]*)/;
 
-TInt = 'Int';
-TNum = 'Num';
-TString = 'String';
-TArray = function TArray(a){
-    return '['+ a +']';
-};
-
 getType = function getType (a) {
     switch (typeof  a) {
         case 'number':
@@ -38,10 +31,6 @@ parseSignature = function parseSignature (s) {
         return m[0];
 
     });
-};
-
-areArrays = function areArrays (a,b){
-    return a[0] === '[' && b[0] === '[';
 };
 
 getTypeVariable = function getTypeVariable (a) {
@@ -116,61 +105,6 @@ Type = function Type (signature, f) {
     return typedFun;
 };
 
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-var dic = {
-    string : "String",
-    number: "Num",
-    object: "Obj",
-    Str: "String"
-};
-
-Str = function Str (a) {
-    if( getNativeType (a) !== "string")
-        throw new TypeError("Expected type String, got " + dic[getNativeType (a)]);
-    else
-        return a;
-};
-
-Num = function Num (a) {
-    if( getNativeType (a) !== "number")
-        throw new TypeError("Expected type Num, got " + dic[getNativeType (a)]);
-    else
-        return a;
-};
-
-Int = function Int (a) {
-    try {
-        Num(a);
-    }
-    catch (e) {
-        throw new TypeError("Expected type Int, got " + dic[getNativeType (a)]);
-    }
-    if( (a % 1) !== 0 )
-        throw new TypeError("Expected type Int, got Num");
-    else
-        return a;
-};
-
-Arr = function Arr  ( type, a ) {
-    if( !(a instanceof Array) )
-        throw new TypeError("Expected type ["+ type.name +"], got " + dic[getNativeType (a)]);
-
-    var rand = getRandomInt(0, a.length - 1),
-        elem = a[rand];
-
-    try {
-        type(elem)
-    }
-    catch (e) {
-        throw new TypeError("Expected type ["+ type.name +"], got " + "["+ dic[typeof elem] +"]");
-    }
-
-    return a;
-};
 
 Function.prototype.setType = function (signature) {
     return Type (signature, this);
