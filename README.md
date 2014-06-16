@@ -55,17 +55,44 @@ tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 ```
 
 ## Type definitions
-2     ==> `Int`
-2.0   ==> `Int`
-2.1   ==> `Num`
-"2"   ==> `String`
-[2]   ==> `[Int]`
-[[2]] ==> `[[Int]]`
+`2`     ==> `Int` <br>
+`2.0`   ==> `Int` <br>
+`2.1`   ==> `Num` <br>
+`"2"`   ==> `String` <br>
+`[2]`   ==> `[Int]` <br>
+`[[2]]` ==> `[[Int]]` <br>
+
+<table style="width:300px">
+<tr>
+  <td>2</td>
+  <td>Int</td> 
+</tr>
+<tr>
+  <td>2.0</td>
+  <td>Int</td> 
+</tr>
+<tr>
+  <td>2.1</td>
+  <td>Num</td> 
+</tr>
+<tr>
+  <td>"2"</td>
+  <td>String</td> 
+</tr>
+<tr>
+  <td>[2,3]</td>
+  <td>[Int]</td> 
+</tr>
+<tr>
+  <td>[[1,2],[3,4]]</td>
+  <td>[[Int]]</td> 
+</tr>
+</table>
 
 ## Missing
 1. Add the rest of JavaScript types (easy)
 2. Add type() method to Function.prototype so functions can access a functions type (relatively easy)
-3. Support type definition for functions that take functions such as `(a -> b) -> a -> b (the previous point helps but remains not easy)
+3. Support type definition for functions that take functions such as `(a -> b) -> a -> b` (the previous point helps but remains not easy)
 
 
 
