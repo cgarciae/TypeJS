@@ -99,6 +99,7 @@ g = f.setType ('a -> a -> a');
 1. Add the rest of JavaScript types (easy)
 2. Add type() method to Function.prototype you can access a functions type (relatively easy)
 3. Support type definition for functions that take functions such as `(a -> b) -> a -> b` (the previous point helps but remains not easy)
+4. Make the return function a curried function that checks the types of the arguments as you add them (currently you can curry the typed function, but type will only be checked when the functions is actually excecuted.
 
 ## Warning
 Typing a function has the extra cost of checking the type of all the arguments and output, don't use this in performance critical applications.
