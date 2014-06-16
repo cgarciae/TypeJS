@@ -4,7 +4,7 @@ TypeJS
 TypeJS is intented to enhance functional programming JavaScript libraries by adding Haskell-style type definition to functions.
 
 ## Basic Example
-Construct a peculiar `Add` function
+Lets construct a peculiar `Add` function
 ```js
 var Add = Type ('Num -> Num -> Int', function (a, b) {
 	return a + b;
