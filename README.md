@@ -1,7 +1,7 @@
 TypeJS
 ======
 
-Automatic checking of Types for JavaScript Functions! TypeJS is intented to enhance functional programming JavaScript libraries by adding Haskell-style type definition to functions.
+Automatic Type-checking for JavaScript Functions! TypeJS is intented to enhance functional programming JavaScript libraries by adding Haskell-style type definition to functions.
 
 ## Basic Example
 Lets construct a peculiar `Add` function
