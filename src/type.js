@@ -172,6 +172,6 @@ Arr = function Arr  ( type, a ) {
     return a;
 };
 
-Function.prototype.autoType = function (signature) {
+Function.prototype.setType = function (signature) {
     return Type (signature, this);
 };
