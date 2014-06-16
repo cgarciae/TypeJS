@@ -54,13 +54,7 @@ var tellSum = Type ('a -> a -> a', function (num1, num2) {
 tellSum (1,2) //TypeError: Incorrect output type, expected Int, received String
 ```
 
-## Type definitions
-`2`     ==> `Int` <br>
-`2.0`   ==> `Int` <br>
-`2.1`   ==> `Num` <br>
-`"2"`   ==> `String` <br>
-`[2]`   ==> `[Int]` <br>
-`[[2]]` ==> `[[Int]]` <br>
+## Currently Supported Types
 
 <table style="width:300px">
 <tr>
