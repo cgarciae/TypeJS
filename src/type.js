@@ -60,7 +60,7 @@ detectVariableType = function detectVariableType (a,b) {
 };
 
 maybeReplaceTypeVariable = function maybeReplaceTypeVariable (a, name, value) {
-    return getTypeVariable(a) === name ? a.replace (name, value) : a;
+    return getTypeVariable(a) === name ? a.replace (name, value). replace ('Int', 'Num') : a;
 };
 
 typesAreEqual = function typesAreEqual (functionSignature, typeNeeded, typeGiven) {
